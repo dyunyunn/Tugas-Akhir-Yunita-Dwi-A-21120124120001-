@@ -1,0 +1,564 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #faad06;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), transparent),
+    url(img/bg.jpg.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 0 8%;
+  position: relative;
+}
+
+/* Styling untuk navigasi atas */
+/* Navigasi */
+nav {
+  width: 1200px;
+  display: flex;
+  position: relative;
+  top: 20px;
+}
+
+nav a {
+  color: white;
+  font-size: 14px;
+  margin: 0 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #432c25; 
+  text-decoration: underline;
+}
+
+
+/* Media Query untuk Navigasi Responsif */
+@media (max-width: 768px) {
+  .menu .box-container {
+    grid-template-columns: 1fr; /* Semua gambar ditampilkan dalam satu kolom  */
+    text-align: center;
+  }
+
+  .about-text button {
+    font-size: 1rem;
+    margin: 20px auto;
+  }
+
+  .menu .box-container .box {
+    max-width: 100%;
+  }
+
+  .nav ul.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    font-size: 1.5rem;
+    color: #FFF8E1;
+    cursor: pointer;
+  }
+}
+
+.text-box {
+  color: #fff;
+  position: absolute;
+  bottom: 8%;
+}
+
+.text-box p {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.text-box h1 {
+  font-size: 120px;
+  line-height: 130px;
+  margin-left: -10px;
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  background: url(img/bg.jpg.jpg);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-position: 0 0;
+  animation: back 25s linear infinite;
+}
+
+@keyframes back {
+  100% {
+    background-position: 2000px 0;
+  }
+}
+
+.text-box h3 {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.text-box .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.text-box a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 20px;
+  border: 2px solid #fff;
+  align-items: center;
+}
+
+.text-box a span {
+  font-size: 10px;
+  line-height: 10px;
+  margin-left: 5px;
+}
+
+.sosial-icons {
+  position: absolute;
+  right: 3%;
+  bottom: 6%;
+}
+
+.sosial-icons img {
+  width: 25px;
+  display: block;
+  margin: 25px 5px;
+}
+
+/* About Section */
+.about {
+  padding: 50px 10%;
+  background-color: #faad06;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-text h2 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.about-text h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  color: black;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.about-text button {
+  background-color: #ffee0c;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-text button:hover {
+  background-color: #e5cc08;
+  transform: scale(1.05);
+}
+
+/* Image gallery */
+.about-images {
+  display: flex; /* Menampilkan gambar secara horizontal */
+  justify-content: center; /* Pusatkan gambar */
+  gap: 20px; /* Jarak antar gambar */
+  flex-wrap: wrap; /* Agar gambar tetap rapi saat layar kecil */
+  width: 100%; /* Biarkan mengambil seluruh lebar */
+}
+
+.about-images img {
+  width: 100%; /* Gambar menyesuaikan lebar kontainer */
+  max-width: 500px; /* Ukuran maksimum gambar lebih besar */
+  height: auto; /* Menjaga proporsi gambar */
+  border-radius: 15px; /* Membuat sudut lebih lembut */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Bayangan pada gambar */
+  transition: transform 0.3s ease;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animasi Teks */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about .row .text h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #f2f2f2;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.about .row .text p {
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  animation: fadeIn 1.5s ease-out;
+}
+.image {
+  align-items: center;
+  padding: 15px 8px;
+}
+
+/* Bagian Menu */
+.menu {
+  background: linear-gradient(to bottom, #f7d794, #f3a683);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.menu h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+  gap: 2rem;
+  justify-items: center;
+}
+
+.menu .box-container .box {
+  background: #fff;
+  border-radius: 15px; /* Membuat sudut lebih melengkung */
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 350px; /* Lebar terbatas agar tetap teratur */
+  position: relative;
+  cursor: pointer;
+}
+
+.menu .box-container .box:hover {
+  transform: translateY(-15px); /* Efek hover lebih kuat */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.menu .box-container .box img {
+  width: 100%;
+  height: 250px; /* Memperbesar gambar */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  margin-bottom: 1rem; /* Menambahkan jarak ke judul */
+}
+
+.menu .box-container .box img:hover {
+  transform: scale(1.1); /* Efek zoom lebih besar */
+}
+
+.menu .box-container .box h3 {
+  font-size: 2rem; /* Ukuran font lebih besar */
+  color: #333;
+  margin: 1rem 0; /* Jarak atas dan bawah tetap */
+}
+
+.menu .box-container .box a button {
+  display: block;
+  background: #27ae60;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  margin: 1rem auto;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.menu .box-container .box a button:hover {
+  background: #2ecc71;
+}
+
+.menu .box-container .box .price {
+  font-size: 1.5rem;
+  color: #27ae60;
+  margin-bottom: 1rem;
+}
+
+.menu .box-container .box .price span {
+  color: #e74c3c;
+  text-decoration: line-through;
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+
+/* Review */
+.review {
+  background-color: #ab5c02; /* Warna latar belakang terang */
+  padding: 5rem 10%; /* Memberikan padding untuk ruang yang cukup */
+}
+
+.review .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Membuat kolom fleksibel */
+  gap: 2rem; /* Jarak antar kotak */
+}
+
+.review .box-container .box {
+  background-color: #e0b468; /* Latar belakang putih */
+  border-radius: 15px; /* Sudut yang melengkung */
+  padding: 2rem; /* Memberikan padding di dalam kotak */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut di sekitar kotak */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi halus saat hover */
+}
+
+.review .box-container .box:hover {
+  transform: translateY(-10px); /* Efek hover mengangkat kotak */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Efek bayangan lebih besar saat hover */
+}
+
+.review .box-container .box img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%; /* Membuat gambar berbentuk lingkaran */
+  margin-bottom: 1rem; /* Jarak antara gambar dan teks */
+  max-width: 120px; /* Membatasi lebar gambar */
+}
+
+.review h2 {
+  font-size: 2.5rem; /* Ukuran font judul */
+  color: #fff; /* Warna teks judul */
+  text-align: center; /* Menyelaraskan judul ke tengah */
+  margin-bottom: 2rem; /* Jarak antara judul dan kotak-kotak review */
+}
+
+
+.review .box-container .box h3 {
+  font-size: 1.8rem; /* Ukuran font lebih besar untuk nama */
+  font-weight: 600;
+  color: #333; /* Warna teks gelap untuk kontras */
+  margin-bottom: 1rem;
+}
+
+.review .box-container .box p {
+  font-size: 1.2rem; /* Ukuran font lebih besar untuk komentar */
+  color: #666; /* Warna teks lebih terang */
+  line-height: 1.6; /* Jarak antar baris */
+  margin-bottom: 1.5rem;
+  font-style: italic; /* Menambahkan gaya italic pada komentar */
+}
+
+/* Menambahkan styling untuk rating (jika ada) */
+.review .box-container .box .rating {
+  font-size: 1.5rem;
+  color: #f39c12; /* Warna bintang rating */
+  margin-bottom: 1rem;
+}
+
+.review .box-container .box .rating i {
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .review .box-container {
+    grid-template-columns: 1fr; /* Semua kotak dalam satu kolom untuk layar kecil */
+  }
+
+  .review .box-container .box {
+    padding: 1.5rem; /* Mengurangi padding pada layar kecil */
+  }
+
+  .review .box-container .box img {
+    max-width: 100px; /* Membatasi ukuran gambar di layar kecil */
+  }
+}
+/* Contact */
+.contact .row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px; /* Menambahkan jarak antar elemen */
+  margin-top: 3rem;
+}
+
+.contact .row .maps {
+  flex: 1 1 48%; /* Menyusun map dengan lebar 48% */
+  height: 350px; /* Menetapkan tinggi peta agar proporsional */
+  border-radius: 15px; /* Membuat sudut peta lebih lembut */
+  overflow: hidden; /* Menjaga agar peta tetap rapi */
+}
+
+.contact .row .maps iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px; /* Sudut lebih lembut pada iframe */
+}
+
+.contact .row form {
+  flex: 1 1 48%; /* Formulir dengan lebar 48% */
+  background: #dfad63;
+  padding: 2rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.contact .row form:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.contact .row form h3 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact .row form input,
+.contact .row form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.contact .row form input:focus,
+.contact .row form textarea:focus {
+  border-color: #0b8e3d;
+  outline: none;
+  box-shadow: 0 0 10px rgba(11, 142, 61, 0.3);
+}
+
+.contact .row form button {
+  width: 100%;
+  background-color: #0b8e3d;
+  color: white;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.contact .row form button:hover {
+  background-color: #27ae60;
+}
+
+/* Responsivitas pada layar kecil */
+@media (max-width: 768px) {
+  .contact .row {
+    flex-direction: column; /* Menumpuk elemen menjadi kolom pada layar kecil */
+    align-items: center; /* Menyelaraskan elemen ke tengah */
+  }
+
+  .contact .row .maps,
+  .contact .row form {
+    flex: 1 1 90%; /* Map dan form mengambil 90% lebar pada layar kecil */
+    margin-bottom: 2rem; /* Memberikan jarak antar elemen */
+  }
+
+  .contact .row form h3 {
+    font-size: 2rem; /* Menyesuaikan ukuran font judul */
+  }
+
+  .contact .row form input,
+  .contact .row form textarea {
+    font-size: 1rem; /* Mengatur ukuran font agar tetap nyaman di layar kecil */
+  }
+
+  .contact .row form button {
+    font-size: 1.2rem; /* Menyesuaikan ukuran tombol di layar kecil */
+  }
+}
+
+/* Animasi ringan untuk elemen */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact .row .maps,
+.contact .row form {
+  animation: fadeIn 1s ease-out; /* Menambahkan animasi fade-in pada elemen */
+}
+
+/* Footer */
+.footer {
+  background: #74481a;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.footer .share {
+  padding: 1rem 0;
+}
+
+.footer .share a {
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.footer .credit {
+  font-size: 1.5rem;
+  color: #eee;
+}
